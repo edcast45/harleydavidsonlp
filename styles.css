@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
+#page1 {
+  background-image: url('imgs/Fatboy 1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  height: 100vh;
+}
+
+/* Page 1 */
+.page {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+/* Harley Davidson Logo */
+.logo {
+  position: absolute;
+  right: 75px;
+  top: 30px;
+  height: 175px;
+  width: 200px;
+}
+
+/* video */
+iframe {
+  position: absolute;
+  right: 75px;
+  bottom: 40px;
+}
+
+/* Nav */
+nav {
+  overflow: hidden;
+  position: relative;
+  transform: translateX(-300px);
+  height: 100%;
+  width: 400px;
+  transition: all 800ms cubic-bezier(.8, 0, .33, 1);
+  border-radius: 0% 0% 100% 50%;
+  z-index: 3;
+}
+
+nav.nav-open {
+  transform: translateX(0px);
+  border-radius: 0% 0% 0% 0%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+nav .menu-btn {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  padding: 0;
+  width: 30px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+nav .menu-btn .line {
+  padding: 0;
+  width: 30px;
+  background: #fff;
+  height: 2px;
+  margin: 5px 0;
+  transition: all 700ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .menu-btn .line.line--1 {
+  width: 30px;
+  transform: rotate(0) translateY(0);
+}
+
+nav .menu-btn .line.line--1.line-cross {
+  width: 30px;
+  transform: rotate(45deg) translateY(10px);
+  background: #fff;
+}
+
+nav .menu-btn .line.line--2 {
+  width: 28px;
+  transform: translateX(0);
+}
+
+nav .menu-btn .line.line--2.line-fade-out {
+  width: 28px;
+  transform: translate(30px);
+  opacity: 0;
+}
+
+nav .menu-btn .line.line--3 {
+  width: 20px;
+  transform: rotate(0) translateY(0);
+}
+
+nav .menu-btn .line.line--3.line-cross {
+  width: 30px;
+  transform: rotate(-45deg) translateY(-10px);
+  background: #fff;
+}
+
+nav .nav-links {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 900ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .nav-links.fade-in {
+  opacity: 1;
+  transform: translateX(0px);
+  background-color: #FF671F;
+}
+
+nav .nav-links .link {
+  margin: 10px 0;
+  text-decoration: none;
+  font-family: sans-serif;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  transition: all 300ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .nav-links .link:hover {
+  color: rgba(225, 225, 225, 0.7);
+}
+
+/* Main Title */
+.info-text-bg {
+  position: absolute;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  width: 700px;
+  height: 250px;
+  box-shadow: 2px 3px rgba(255, 255, 255, .6)
+}
+
+.info-text-bg h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.info-text-bg p {
+  font-size: 1.1em;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+}
+
+/* CTA Botton */
+.info-text-bg a {
+  display: inline-block;
+  font-size: 1em;
+  background: #FF671F;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+#info-text a:hover {
+  letter-spacing: 6px;
+}
+
+/* Social Media Links */
+.social {
+  position: absolute;
+  z-index: 10;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social li a {
+  display: inline-block;
+  margin-right: 10px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+
+.social li a:hover {
+  transform: scale(0.5) translateY(-15px);
+}
+
+.fab {
+  font-size: 75px;
+  color: #111;
+}
+
+/* Menu */
+.nav-logo {
+  position: absolute;
+  height: 100px;
+  width: 125px;
+  bottom: 0px;
+  left: 10px;
+  opacity: 0.5;
+}
+
+.misc-menu {
+  position: absolute;
+  z-index: 10;
+  right: 5px;
+  bottom: 5px;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+.misc-menu li {
+  list-style: none;
+}
+
+.misc-menu li a {
+  display: inline-block;
+  margin-right: 10px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+
+.misc-menu li a:hover {
+  transform: scale(0.5) translateY(-15px);
+}
+
+.misc-menu .fas {
+  font-size: 60px;
+  color: #111;
+}
+
+
+/* PAGE 2 */
+#page2 {
+  background-image: url(imgs/h-d-logo-shield.svg);
+  background-repeat: no-repeat;
+  background-size: 900px;
+  background-position: center;
+  position: relative;
+
+  display: flex;
+  background-color: #fff;
+  height: 100vh;
+  width: 100%;
+}
+
+.carousel {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+.carousel {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+/* PAGE 3 */
+#page3 {
+  position: relative;
+  display: flex;
+  background: #111;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Bike Specs Icons */
+.bike-parts {
+  display: flex;
+  height: 200px;
+  width: 100%;
+  justify-content: center;
+  padding-top: 75px;
+}
+
+.bike-parts img {
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+/* Bike Images in columns */
+.container {
+  position: absolute;
+  display: flex;
+  margin: auto;
+  margin-top: 200px;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  height: 500px;
+  width: 100%;
+}
+
+.left-img {
+  display: flex;
+  width: 725px;
+  height: 400px;
+  margin-left: 75px;
+  margin-right: 10px;
+}
+
+.right-img {
+  display: block;
+  width: 375px;
+  height: 225px;
+  margin-left: 225px;
+}
+
+.price-bar {
+  position: absolute;
+  width: 700px;
+  height: 125px;
+  background-color: #fff;
+  z-index: 1;
+  bottom: 50px;
+  right: 15px;
+}
+
+/* Purchase Bar */
+.row2 {
+  height: 125px;
+  padding-left: 50px;
+}
+
+.col-l,
+.col-r {
+  margin: auto;
+}
+
+/* Purchase Button */
+.btn {
+  background-color: #FF671F;
+  color: #fff;
+  border: #FF671F
+}
+
+.btn:hover {
+  background-color: #e05b1c
+}
+
+
+/* Page 4 */
+#page4 {
+  display: flex;
+  background: #EBEBEB;
+  height: 100vh;
+  width: 100%;
+}
+
+#row2,
+#row3 {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
+  height: 100%;
+}
+
+.fbb {
+  width: 500px;
+  height: 500px;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+.h1-text {
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 75px 0 25px 0;
+
+}
+
+.text {
+  font-weight: lighter;
+  width: 550px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  margin-bottom: 15px;
+}
+
+#map {
+  height: 200px;
+  width: 700px;
+}
+
+/* Page 5 */
+#page5 {
+  background-image: url('imgs/Harley Davidson Logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+#row3 {
+  background-color: rgba(255, 255, 255, .9);
+  height: 100vh;
+}
+
+.form-l {
+  background-color: #fff;
+  height: 500px;
+  width: 600px;
+  box-shadow: 3px 3px 3px #bfbfbf;
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 30px;
+}
+
+.form-l h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 4rem;
+}
+
+.form-control {
+  margin: auto;
+  width: 75%;
+}
+
+.submit {
+  width: 200px;
+  height: 55px;
+  font-size: 1.5rem;
+  margin-left: 32%;
+  -ms-transform: translateY(-80%);
+  transform: translateY(30%);
+}
+
+.fbb2 {
+  width: 600px;
+  height: 500px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+/* FOOTER */
+#footer {
+  position: relative;
+  background-color: #111;
+  width: 100%;
+  height: 250px;
+  color: #bfbfbf;
+  margin: 0;
+  padding: 10px;
+}
+
+.link-dark {
+  color: #bfbfbf;
+}
+
+.lower-text {
+  padding-left: 30px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.footer-social {
+  position: absolute;
+  z-index: 10;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.col-2 {
+  text-align: center;
+  padding-top: 25px;
+  padding-left: 15px;
+}
+
+.footer-social {
+  position: absolute;
+  z-index: 10;
+  bottom: 40px;
+  display: flex;
+  margin: 25px;
+}
+
+.footer-social .fab {
+  list-style: none;
+  color: #bfbfbf;
+  font-size: 40px;
+  margin: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+#hd-info li a {
+  text-align: left;
+  color: #bfbfbf;
+}
+
+form .btn {
+  margin: 0;
+}
